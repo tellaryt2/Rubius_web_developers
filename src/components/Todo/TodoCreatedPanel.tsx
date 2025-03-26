@@ -1,88 +1,3 @@
-// import { FC, useState } from 'react';
-// import "./todo.css";
-// import { ICategory, ITodo } from '../../types/types';
-
-// interface TodoCreatedPanelProps {
-//     categories: ICategory[];
-//     onAddTodo: (todo: ITodo) => void;
-// }
-
-// const TodoCreatedPanel: FC<TodoCreatedPanelProps> = ({ onAddTodo, categories }) => {
-//     const [newTodo, setNewTodo] = useState({
-//         description: "",
-//         date: "",
-//         category: categories[0] 
-//     });
-
-//     const createNewTodo = () => {
-//         if (!newTodo.description.trim()) {
-//             alert("Description cannot be empty!");
-//             return;
-//         }
-
-//         const newTodoData: ITodo = {
-//             id: Date.now(), 
-//             date: newTodo.date,
-//             description: newTodo.description,
-//             category: newTodo.category.title, 
-//         };
-
-//         onAddTodo(newTodoData);
-//         setNewTodo({ 
-//             date: "", 
-//             description: "",  
-//             category: categories[0] 
-//         });
-//     };
-
-//     const handleCategoryChange = (title: string) => {
-//         const selectedCategory = categories.find(cat => cat.title === title);
-//         if (selectedCategory) {
-//             setNewTodo({ ...newTodo, category: selectedCategory });
-//         }
-//     };
-
-//     return (
-//         <div>
-//             <h1 className="todo-title">ToDo List</h1>
-//             <div className="todo-inputs">
-//                 <input
-//                     className="todo-input"
-//                     type="text"
-//                     placeholder="add your ToDo Description"
-//                     value={newTodo.description}
-//                     onChange={(e) =>
-//                         setNewTodo({ ...newTodo, description: e.target.value })
-//                     }
-//                 />
-
-//                 <input
-//                     className="todo-input"
-//                     type="date"
-//                     value={newTodo.date}
-//                     onChange={(e) => setNewTodo({ ...newTodo, date: e.target.value })}
-//                 />
-                
-//                 <select
-//                     className="todo-input"
-//                     value={newTodo.category.title}
-//                     onChange={(e) => handleCategoryChange(e.target.value)}
-//                 >
-//                     {categories.map((category) => (
-//                         <option key={category.id} value={category.title}>
-//                             {category.title}
-//                         </option>
-//                     ))}
-//                 </select>
-
-//                 <div className='red-input' onClick={createNewTodo}>+</div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default TodoCreatedPanel;
-
 import { 
     Box, 
     TextField, 
@@ -151,7 +66,7 @@ const TodoCreatedPanel: FC<TodoCreatedPanelProps> = ({ onAddTodo, categories }) 
             }}>
                 <TextField
                     variant="outlined"
-                    placeholder="Add your ToDo Description"
+                    placeholder="Add your Report Description"
                     value={newTodo.description}
                     onChange={(e) =>
                         setNewTodo({ ...newTodo, description: e.target.value })
